@@ -1,0 +1,18 @@
+# dsh-tex-block-normalizer bundle patch.
+#
+# 声明本插件的宿主侧 loader 入口。`insert:` 行随包发布，因此
+# `dsh plugin --profile web add <本包路径>` 会自动把它追加进该 profile 的
+# `dsh.profile.bundles`，不需要再手写同 id 的 `- insert:`（会报 duplicate
+# loader entry id）。
+#
+# `name` 是裸包名，由 loader 的两段解析落到本包的 exports["."]，即 lib/host.js
+# （空实现，只为了让 registry 扫到这个包）。
+# 浏览器半部由 package.json 的 `dsh.client` 声明 + `exports["./client"]`
+# 自动被 dsh-client-modules 发现，无需在此声明。
+#
+# 安装：dsh plugin --profile web add <本包目录>
+# 之后重启 dsh web 并刷新页面。
+
+- insert:
+    - id: dsh-tex-block-normalizer
+      name: 'dsh-tex-block-normalizer'
