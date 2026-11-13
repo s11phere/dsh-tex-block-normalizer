@@ -68,6 +68,13 @@ AFTER : 5 display formula(s), 0 KaTeX failure(s)
 
 最后一行会区分三种情况：`the plugin repairs this file` / `already clean` / `normalization is a no-op; this failure is not the Pandoc-style $$ bug`——用于判断某个 KaTeX 报错是否属于本插件负责的范围。
 
+## 验证与临时关闭
+
+- 刷新后控制台出现一次 `[dsh-tex-block-normalizer] active: Pandoc-style $$ blocks are normalized before Markdown parsing`。
+- devtools 里查看 `__DSH_TEX_BLOCK_NORMALIZER__` → `{ installed: true, reason: 'installed', stats: { calls, rewrites } }`；`rewrites` 增长表示确实改写过。
+- 打开此前报错的历史消息：红色纯文本消失、公式正常排版，即生效。
+- 临时关闭：页面加载前设 `globalThis.__DSH_TEX_BLOCK_NORMALIZER_DISABLE__ = true`。
+
 ## 发版
 
 1. 改 `lib/normalize.js`（必要时改 `lib/client.js` 模板）→ `npm run build` → `npm test`；

@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/s11phere/dsh-tex-block-normalizer.git"
+    "url": "git+https://github.com/TianzeLuo/dsh-tex-block-normalizer.git"
   },
   "main": "./lib/host.js",
   "exports": {
@@ -16,7 +16,8 @@
     "./package.json": "./package.json"
   },
   "engines": {
-    "node": ">=22.5"
+    "node": ">=22.5",
+    "dsh": ">=0.2.2-rc.3"
   },
   "files": [
     "lib",
