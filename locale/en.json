@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "TeX block normalizer",
+    "description": "Repairs Pandoc-style $$ display-math blocks that DSH's Markdown grammar mis-parses, where the first line silently vanishes or the rest of the message is swallowed into one red parse error. It only moves where the $$ delimiters sit; formulas and the surrounding text are left as written.",
+    "detail": "docs/DETAIL.md"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "TeX 公式块修复",
+    "description": "修好 DSH 的 Markdown 解析错误处理的 Pandoc 风格 $$ 公式块：首行被静默吞掉，或后续正文被并进一个红色解析报错。它只调整 $$ 定界符的换行位置，公式与正文保持原样。",
+    "detail": "docs/DETAIL.zh.md"
+  }
+}
